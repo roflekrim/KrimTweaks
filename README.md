@@ -14,7 +14,6 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - [ ] Disable camera noise / dither
 - [ ] Disable controller rumble
 - [ ] Remove menu notes
-- [ ] Remove fake 360 maps
 - [ ] Clock
 - [ ] Session length
 - [ ] Normalize audio
