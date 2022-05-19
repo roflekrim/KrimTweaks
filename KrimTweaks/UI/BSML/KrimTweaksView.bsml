@@ -1,0 +1,104 @@
+<vertical child-control-height="false" spacing="2" xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+    <tab-selector tab-tag="tabs" id="tabSelector" />
+    
+    <tab tags="tabs" tab-name="Menu">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Static Lights Toggle" value="menu-static-lights" apply-on-change="true"
+                              hover-hint="Merges the light effect filters into a single toggle"
+                />
+                <bool-setting text="Remove Promotional Banners" value="menu-promo-banners" apply-on-change="true"
+                              hover-hint="Removes promotional banners for DLCs"
+                />
+                <bool-setting text="Skip Health Warning" value="menu-skip-health" apply-on-change="true"
+                              hover-hint="Skips the health warning shown at startup"
+                />
+                <bool-setting text="Remove Menu Notes" value="menu-remove-notes" apply-on-change="true"
+                              hover-hint="Removes the decorative notes"
+                />
+            </vertical>
+        </horizontal>
+    </tab>
+    
+    <tab tags="tabs" tab-name="Gameplay">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Disable Debris" value="gameplay-debris" />
+                <bool-setting text="Remove Music Group Logos" value="gameplay-group-logos"
+                              hover-hint="Removes music group logos in environments such as Timbaland or BTS" 
+                />
+                <bool-setting text="Disable Beat Lines" value="gameplay-beat-lines"
+                              hover-hint="Disables the lights on the floor which indicate where notes spawn"
+                />
+                <bool-setting text="Disable Controller Rumble" value="gameplay-rumble"
+                              hover-hint="Disables controller rumble"
+                />
+            </vertical>
+        </horizontal>
+    </tab>
+    
+    <tab tags="tabs" tab-name="Effects / Particles">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Disable World Particles" value="vfx-world" apply-on-change="true"
+                              hover-hint="Disables world particles"
+                />
+                <bool-setting text="Disable Cut Particles" value="vfx-cut" apply-on-change="true"
+                              hover-hint="Disables particles spawned when cutting a note"
+                />
+                <bool-setting text="Disable Bomb Particles" value="vfx-bomb" apply-on-change="true"
+                              hover-hint="Disables particles when hitting a bomb"
+                />
+                <bool-setting text="Disable Saber Clash" value="vfx-saber-clash" apply-on-change="true"
+                              hover-hint="Disables particles and rumble when both sabers collide"
+                />
+                <bool-setting text="Disable Obstacle Particles" value="vfx-obstacle" apply-on-change="true"
+                              hover-hint="Disables particles and burn marks when a saber touches an obstacle"
+                />
+                <bool-setting text="Disable Floor Burn Particles" value="vfx-floor-particles" apply-on-change="true"
+                              hover-hint="Disables particles spawned when a saber touches the floor"
+                />
+                <bool-setting text="Disable Floor Burn Marks" value="vfx-floor-marks" apply-on-change="true"
+                              hover-hint="Disables marks spawned when a saber touches the floor"
+                />
+                <bool-setting text="Disable Full Combo Break" value="vfx-fc-break" apply-on-change="true"
+                              hover-hint="Disables full combo break animation"
+                />
+                <bool-setting text="Disable Camera Noise / Dither" value="vfx-cam-noise-dither" apply-on-change="true"
+                              hover-hint="Disables the random noise / dithering applied by Beat Saber"
+                />
+            </vertical>
+        </horizontal>
+    </tab>
+    
+    <tab tags="tabs" tab-name="Audio">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Enable Audio Normalization" value="audio-enable-normalization" apply-on-change="true" />
+                <increment-setting text="Minimum Loudness" formatter="audio-dB" increment="1" min="-80" max="0" value="audio-min-loudness" apply-on-change="true" />
+                <increment-setting text="Maximum Loudness" formatter="audio-dB" increment="1" min="-79" max="0" value="audio-max-loudness" apply-on-change="true" />
+                <text text="NOTICE : Audio normalization only effects songs" align="Center" />
+            </vertical>
+        </horizontal>
+    </tab>
+
+    <tab tags="tabs" tab-name="Clock">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Enable Clock" value="clock-enable" apply-on-change="true" 
+                              hover-hint="Adds a clock"
+                />
+                <bool-setting text="Show In-Song" value="clock-in-song" apply-on-change="true"
+                              hover-hint="Decides if the clock is being shown when playing a song"
+                />
+                <bool-setting text="Add Session Length" value="clock-session-length" apply-on-change="true"
+                              hover-hint="Adds a session timer below the clock"
+                />
+                <dropdown-list-setting text="Time Format" apply-on-change="true" 
+                                       options="clock-formats" value="clock-format"
+                                       formatter="clock-formatter"
+                />
+            </vertical>
+        </horizontal>
+    </tab>
+</vertical>

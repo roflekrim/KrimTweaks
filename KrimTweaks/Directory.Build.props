@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This file contains project properties used by the build. -->
+<Project>
+  <!-- Manifest -->
+  <PropertyGroup>
+    <AssemblyName>KrimTweaks</AssemblyName>
+    <Authors>roflekrim</Authors>
+    <Version>0.0.1</Version>
+    <GameVersion>1.22.0</GameVersion>
+    <Description>Provides a collection of tweaks to improve the game experience</Description>
+    <ProjectSource>https://github.com/roflekrim/KrimTweaks</ProjectSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Dependency Include="BSIPA" Version="^4.2.2" />
+  </ItemGroup>
+  <!-- End Manifest -->
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <DisableCopyToPlugins>true</DisableCopyToPlugins>
+    <DisableZipRelease>true</DisableZipRelease>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(NCrunch)' == '1'">
+    <ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
+    <DisableCopyToPlugins>true</DisableCopyToPlugins>
+    <DisableZipRelease>true</DisableZipRelease>
+  </PropertyGroup>
+</Project>
