@@ -18,6 +18,7 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - [ ] Remove fake 360 maps
 - [ ] Clock
 - [ ] Session length
+- [ ] Normalize audio
 
 ## Disclaimer
 
