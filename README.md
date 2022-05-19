@@ -7,7 +7,6 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - [ ] Disable debris
 - [ ] Remove particles (world, cut, obstacle, floor burn, saber clash)
 - [ ] Remove music group logos in environments
-- [ ] Jump duration increment in player settings
 - [ ] Add static lights toggle back
 - [ ] Remove promotional banners
 - [ ] Skip health warning
