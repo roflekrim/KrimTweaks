@@ -1,4 +1,5 @@
 using KrimTweaks.Behaviours.Gameplay;
+using KrimTweaks.Behaviours.VFX;
 using KrimTweaks.Configuration;
 using Zenject;
 
@@ -12,5 +13,7 @@ internal class GameInstaller : Installer
         
         if (config.Gameplay.RemoveMusicGroupLogos)
             Container.BindInterfacesAndSelfTo<MusicGroupLogoRemover>().FromNewComponentOnNewGameObject().AsSingle();
+        
+        Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().FromNewComponentOnNewGameObject().AsSingle();
     }
 }

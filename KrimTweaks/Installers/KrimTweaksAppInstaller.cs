@@ -1,6 +1,6 @@
 using KrimTweaks.Affinity_Patches.Gameplay;
 using KrimTweaks.Affinity_Patches.Menu;
-using KrimTweaks.Behaviours.Menu;
+using KrimTweaks.Affinity_Patches.VFX;
 using KrimTweaks.Configuration;
 using Zenject;
 
@@ -29,5 +29,13 @@ internal class AppInstaller : Installer
         Container.BindInterfacesTo<DisableBeatLines>().AsSingle();
         Container.BindInterfacesTo<DisableRumble>().AsSingle();
 
+        Container.BindInterfacesTo<CameraNoise>().AsSingle();
+        Container.BindInterfacesTo<CutParticles>().AsSingle();
+        Container.BindInterfacesTo<BombCutParticles>().AsSingle();
+        Container.BindInterfacesTo<SaberClash>().AsSingle();
+        Container.BindInterfacesTo<ObstacleHitEffect>().AsSingle();
+        Container.BindInterfacesTo<SaberBurnSparkles>().AsSingle();
+        Container.BindInterfacesTo<SaberBurnArea>().AsSingle();
+        Container.BindInterfacesTo<FullComboBreak>().AsSingle();
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System.Linq;
-using KrimTweaks.Configuration;
-using SiraUtil.Logging;
 using UnityEngine;
 using Zenject;
 
