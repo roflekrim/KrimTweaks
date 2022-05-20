@@ -7,12 +7,13 @@ using Zenject;
 
 namespace KrimTweaks.Behaviours.Menu;
 
+// ReSharper disable FieldCanBeMadeReadOnly.Local
 internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
 {
-#pragma warning disable CS8618 CS0649
-    [Inject] private SiraLog _siraLog;
-    [Inject] private PluginConfig _config;
-#pragma warning restore CS8618 CS0649
+#pragma warning disable CS8618
+    [Inject] private SiraLog _siraLog = null!;
+    [Inject] private PluginConfig _config = null!;
+#pragma warning restore CS8618
     
     private static readonly List<GameObject> DisabledNotes = new List<GameObject>();
 
