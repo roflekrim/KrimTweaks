@@ -16,7 +16,6 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - [x] Remove menu notes
 - [x] Clock
 - [x] Session length
-- [ ] Normalize audio
 
 ## Disclaimer
 

@@ -150,37 +150,6 @@ public class KrimTweaksViewController : BSMLAutomaticViewController
     }
 
     #endregion
-    
-    #region Audio
-
-    [UIValue("audio-enable-normalization")]
-    protected bool AudioEnableNormalization
-    {
-        get => _config.Audio.EnableNormalization;
-        set => _config.Audio.EnableNormalization = value;
-    }
-    
-    [UIValue("audio-min-loudness")]
-    protected float AudioMinLoudness
-    {
-        get => _config.Audio.MinLoudness;
-        set => _config.Audio.MinLoudness = value;
-    }
-    
-    [UIValue("audio-max-loudness")]
-    protected float AudioMaxLoudness
-    {
-        get => _config.Audio.MaxLoudness;
-        set => _config.Audio.MaxLoudness = value;
-    }
-
-    [UIAction("audio-dB")]
-    public string Formatter_dB(float val)
-    {
-        return $"{val} dB";
-    }
-
-    #endregion
 
     #region Clock
 

@@ -1,3 +1,4 @@
+using KrimTweaks.Affinity_Patches;
 using KrimTweaks.Affinity_Patches.Gameplay;
 using KrimTweaks.Affinity_Patches.Menu;
 using KrimTweaks.Affinity_Patches.VFX;

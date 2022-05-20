@@ -40,13 +40,6 @@ public class VFXConfig
     public virtual bool DisableCameraNoiseDither { get; set; } = false;
 }
 
-public class AudioConfig
-{
-    public virtual bool EnableNormalization { get; set; } = false;
-    public virtual float MinLoudness { get; set; } = -60f;
-    public virtual float MaxLoudness { get; set; } = -10f;
-}
-
 public class ClockConfig
 {
     public virtual bool Enabled { get; set; } = false;
@@ -74,7 +67,6 @@ public class PluginConfig
     public virtual MenuConfig Menu { get; set; } = new();
     public virtual GameplayConfig Gameplay { get; set; } = new();
     public virtual VFXConfig VFX { get; set; } = new();
-    public virtual AudioConfig Audio { get; set; } = new();
     public virtual ClockConfig Clock { get; set; } = new();
 
     public virtual void Changed() => PropertyChanged.Invoke();

@@ -70,17 +70,6 @@
             </vertical>
         </horizontal>
     </tab>
-    
-    <tab tags="tabs" tab-name="Audio">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Enable Audio Normalization" value="audio-enable-normalization" apply-on-change="true" />
-                <increment-setting text="Minimum Loudness" formatter="audio-dB" increment="1" min="-80" max="0" value="audio-min-loudness" apply-on-change="true" />
-                <increment-setting text="Maximum Loudness" formatter="audio-dB" increment="1" min="-79" max="0" value="audio-max-loudness" apply-on-change="true" />
-                <text text="NOTICE : Audio normalization only effects songs" align="Center" />
-            </vertical>
-        </horizontal>
-    </tab>
 
     <tab tags="tabs" tab-name="Clock">
         <horizontal>
