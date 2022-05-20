@@ -23,14 +23,14 @@
     <tab tags="tabs" tab-name="Gameplay">
         <horizontal>
             <vertical>
-                <bool-setting text="Disable Debris" value="gameplay-debris" />
-                <bool-setting text="Remove Music Group Logos" value="gameplay-group-logos"
-                              hover-hint="Removes music group logos in environments such as Timbaland or BTS" 
+                <bool-setting text="Disable Debris" value="gameplay-debris" apply-on-change="true" />
+                <bool-setting text="Remove Music Group Logos" value="gameplay-group-logos" apply-on-change="true"
+                              hover-hint="Removes music group logos in environments such as Linkin Park or BTS" 
                 />
-                <bool-setting text="Disable Beat Lines" value="gameplay-beat-lines"
+                <bool-setting text="Disable Beat Lines" value="gameplay-beat-lines" apply-on-change="true"
                               hover-hint="Disables the lights on the floor which indicate where notes spawn"
                 />
-                <bool-setting text="Disable Controller Rumble" value="gameplay-rumble"
+                <bool-setting text="Disable Controller Rumble" value="gameplay-rumble" apply-on-change="true"
                               hover-hint="Disables controller rumble"
                 />
             </vertical>

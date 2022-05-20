@@ -4,15 +4,15 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 
 ## Features
 
-- [ ] Disable debris
+- [x] Disable debris
 - [ ] Remove particles (world, cut, obstacle, floor burn, saber clash)
-- [ ] Remove music group logos in environments
+- [x] Remove music group logos in environments
 - [x] Add static lights toggle back
 - [x] Remove promotional banners
 - [x] Skip health warning
-- [ ] Disable beat lines
+- [x] Disable beat lines
 - [ ] Disable camera noise / dither
-- [ ] Disable controller rumble
+- [x] Disable controller rumble
 - [x] Remove menu notes
 - [ ] Clock
 - [ ] Session length

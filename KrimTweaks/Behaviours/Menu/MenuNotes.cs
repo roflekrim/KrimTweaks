@@ -16,6 +16,7 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
 #pragma warning restore CS8618
     
     private static readonly List<GameObject> DisabledNotes = new List<GameObject>();
+    private static bool LastState = false;
 
     public void Initialize()
     {
@@ -32,6 +33,11 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
 
     private void Handle()
     {
+        if (LastState == _config.Menu.RemoveMenuNotes)
+            return;
+
+        LastState = _config.Menu.RemoveMenuNotes;
+        
         if (_config.Menu.RemoveMenuNotes)
         {
             var environment = GameObject.Find("MenuEnvironmentManager/DefaultMenuEnvironment");

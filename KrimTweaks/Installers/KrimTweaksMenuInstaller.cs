@@ -1,3 +1,4 @@
+using KrimTweaks.Behaviours.Menu;
 using KrimTweaks.UI;
 using Zenject;
 
@@ -10,5 +11,7 @@ internal class MenuInstaller : Installer
         Container.Bind<KrimTweaksViewController>().FromNewComponentAsViewController().AsSingle();
         Container.Bind<KrimTweaksFlowCoordinator>().FromNewComponentOnNewGameObject().AsSingle();
         Container.BindInterfacesAndSelfTo<KrimTweaksMenuButton>().AsSingle();
+        
+        Container.BindInterfacesAndSelfTo<MenuNotes>().FromNewComponentOnNewGameObject().AsSingle();
     }
 }
