@@ -11,7 +11,6 @@ namespace KrimTweaks.Behaviours.Menu;
 internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
 {
 #pragma warning disable CS8618
-    [Inject] private SiraLog _siraLog = null!;
     [Inject] private PluginConfig _config = null!;
 #pragma warning restore CS8618
     
@@ -50,10 +49,6 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
             DisabledNotes.ForEach(go => go.SetActive(true));
             DisabledNotes.Clear();
         }
-
-#if DEBUG
-        _siraLog.Debug($"Removed menu notes: {_config.Menu.RemoveMenuNotes}");
-#endif
     }
 
     private static IEnumerable<GameObject> GetNotes(Transform parent)
