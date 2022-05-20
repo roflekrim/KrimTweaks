@@ -101,9 +101,7 @@
     <ItemGroup>
         <None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
         <None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Affinity Patches" />
+        <None Remove="beat_saber.ico" />
     </ItemGroup>
     <ItemGroup>
       <None Remove="UI\BSML\KrimTweaksView.bsml" />

@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using IPA.Config.Stores;
 using IPA.Config.Stores.Attributes;
 using IPA.Config.Stores.Converters;
+using UnityEngine.Events;
 
 [assembly: InternalsVisibleTo(GeneratedStore.AssemblyVisibilityTarget)]
 
@@ -75,4 +76,9 @@ public class PluginConfig
     public virtual VFXConfig VFX { get; set; } = new();
     public virtual AudioConfig Audio { get; set; } = new();
     public virtual ClockConfig Clock { get; set; } = new();
+
+    public virtual void Changed() => PropertyChanged.Invoke();
+    
+    [Ignore]
+    public readonly UnityEvent PropertyChanged = new();
 }
