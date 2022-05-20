@@ -1,10 +1,10 @@
-using BeatSaberMarkupLanguage;
-using SiraUtil.Logging;
-using HMUI;
 using System;
+using BeatSaberMarkupLanguage;
+using HMUI;
+using SiraUtil.Logging;
 using Zenject;
 
-namespace KrimTweaks.UI;
+namespace KrimTweaks.UI.Settings;
 
 public class KrimTweaksFlowCoordinator : FlowCoordinator
 {

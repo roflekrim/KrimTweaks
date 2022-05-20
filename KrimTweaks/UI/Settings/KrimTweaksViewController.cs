@@ -6,10 +6,10 @@ using BeatSaberMarkupLanguage.ViewControllers;
 using KrimTweaks.Configuration;
 using Zenject;
 
-namespace KrimTweaks.UI;
+namespace KrimTweaks.UI.Settings;
 
 [ViewDefinition("KrimTweaks.UI.BSML.KrimTweaksView.bsml")]
-[HotReload(RelativePathToLayout = @".\BSML\KrimTweaksView.bsml")]
+[HotReload(RelativePathToLayout = @"..\BSML\KrimTweaksView.bsml")]
 public class KrimTweaksViewController : BSMLAutomaticViewController
 {
     private PluginConfig _config = null!;

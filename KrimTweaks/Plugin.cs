@@ -1,4 +1,5 @@
-﻿using IPA;
+﻿using System;
+using IPA;
 using IPA.Config;
 using IPA.Config.Stores;
 using SiraUtil.Zenject;
@@ -11,9 +12,13 @@ namespace KrimTweaks;
 [Plugin(RuntimeOptions.DynamicInit), NoEnableDisable]
 public class Plugin
 {
+    internal static DateTime Started;
+    
     [Init]
     public void Init(Zenjector zenjector, IPALogger logger, Config config)
     {
+        Started = DateTime.Now;
+
         zenjector.UseLogger(logger);
         zenjector.UseMetadataBinder<Plugin>();
         

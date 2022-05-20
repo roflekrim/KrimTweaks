@@ -3,7 +3,7 @@ using BeatSaberMarkupLanguage;
 using BeatSaberMarkupLanguage.MenuButtons;
 using Zenject;
 
-namespace KrimTweaks.UI;
+namespace KrimTweaks.UI.Settings;
 
 public class KrimTweaksMenuButton : IInitializable, IDisposable
 {

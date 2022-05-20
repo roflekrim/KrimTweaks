@@ -1,6 +1,9 @@
+using KrimTweaks.Behaviours.Clock;
 using KrimTweaks.Behaviours.Menu;
 using KrimTweaks.Behaviours.VFX;
 using KrimTweaks.UI;
+using KrimTweaks.UI.Clock;
+using KrimTweaks.UI.Settings;
 using Zenject;
 
 namespace KrimTweaks.Installers;
@@ -15,5 +18,8 @@ internal class MenuInstaller : Installer
         
         Container.BindInterfacesAndSelfTo<MenuNotes>().FromNewComponentOnNewGameObject().AsSingle();
         Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().FromNewComponentOnNewGameObject().AsSingle();
+
+        Container.Bind<ClockViewController>().FromNewComponentAsViewController().AsSingle();
+        Container.BindInterfacesTo<Clock>().AsSingle();
     }
 }
