@@ -18,6 +18,7 @@ public class KrimTweaksFlowCoordinator : FlowCoordinator
         _mainFlowCoordinator = mainFlowCoordinator;
         _siraLog = siraLog;
         _viewController = viewController;
+        _viewController._flowCoordinator = this;
     }
 
     protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
@@ -39,5 +40,21 @@ public class KrimTweaksFlowCoordinator : FlowCoordinator
     protected override void BackButtonWasPressed(ViewController topViewController)
     {
         _mainFlowCoordinator.DismissFlowCoordinator(this);
+    }
+
+    internal void SetLeftViewController(ViewController? viewController)
+    {
+        if (viewController is null)
+            SetLeftScreenViewController(null, ViewController.AnimationType.Out);
+        else
+            SetLeftScreenViewController(viewController, ViewController.AnimationType.In);
+    }
+    
+    internal void SetRightViewController(ViewController? viewController)
+    {
+        if (viewController is null)
+            SetRightScreenViewController(null, ViewController.AnimationType.Out);
+        else
+            SetRightScreenViewController(viewController, ViewController.AnimationType.In);
     }
 }

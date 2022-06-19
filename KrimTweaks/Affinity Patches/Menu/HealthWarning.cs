@@ -1,8 +1,5 @@
-﻿using IPA.Utilities;
-using SiraUtil.Affinity;
+﻿using SiraUtil.Affinity;
 using SiraUtil.Logging;
-using UnityEngine.UI;
-using Zenject;
 
 namespace KrimTweaks.Affinity_Patches.Menu;
 

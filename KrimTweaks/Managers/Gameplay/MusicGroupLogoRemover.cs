@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace KrimTweaks.Behaviours.Gameplay;
+namespace KrimTweaks.Managers.Gameplay;
 
 // ReSharper disable Unity.PerformanceCriticalCodeInvocation
 // ReSharper disable Unity.PerformanceCriticalCodeNullComparison

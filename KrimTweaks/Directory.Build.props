@@ -5,13 +5,15 @@
   <PropertyGroup>
     <AssemblyName>KrimTweaks</AssemblyName>
     <Authors>roflekrim</Authors>
-    <Version>0.0.1</Version>
-    <GameVersion>1.22.0</GameVersion>
+    <Version>1.0.0</Version>
+    <GameVersion>1.23.0</GameVersion>
     <Description>Provides a collection of tweaks to improve the game experience</Description>
     <ProjectSource>https://github.com/roflekrim/KrimTweaks</ProjectSource>
   </PropertyGroup>
   <ItemGroup>
     <Dependency Include="BSIPA" Version="^4.2.2" />
+    <Dependency Include="BeatSaberMarkupLanguage" Version="^1.6.4" />
+    <Dependency Include="SiraUtil" Version="^3.0.6" />
   </ItemGroup>
   <!-- End Manifest -->
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">

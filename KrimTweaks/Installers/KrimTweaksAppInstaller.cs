@@ -38,5 +38,7 @@ internal class AppInstaller : Installer
         Container.BindInterfacesTo<SaberBurnSparkles>().AsSingle();
         Container.BindInterfacesTo<SaberBurnArea>().AsSingle();
         Container.BindInterfacesTo<FullComboBreak>().AsSingle();
+
+        Container.BindInterfacesTo<DisableScrolling>().AsSingle();
     }
 }

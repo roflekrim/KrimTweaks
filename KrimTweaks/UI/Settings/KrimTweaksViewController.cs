@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BeatSaberMarkupLanguage.Attributes;
+using BeatSaberMarkupLanguage.Components;
 using BeatSaberMarkupLanguage.ViewControllers;
+using HMUI;
 using KrimTweaks.Configuration;
+using KrimTweaks.UI.Settings.Clock;
+using SiraUtil.Logging;
 using Zenject;
 
 namespace KrimTweaks.UI.Settings;
@@ -13,12 +17,26 @@ namespace KrimTweaks.UI.Settings;
 public class KrimTweaksViewController : BSMLAutomaticViewController
 {
     private PluginConfig _config = null!;
+    private SiraLog _siraLog = null!;
+    private ClockEffectsViewController _effectsViewController = null!;
+    private ClockTransformViewController _transformViewController = null!;
+    
+    internal KrimTweaksFlowCoordinator _flowCoordinator = null!;
     
     [Inject]
-    public void Construct(PluginConfig config)
+    public void Construct(PluginConfig config,
+        SiraLog siraLog,
+        ClockEffectsViewController effectsViewController,
+        ClockTransformViewController transformViewController)
     {
         _config = config;
+        _siraLog = siraLog;
+        _effectsViewController = effectsViewController;
+        _transformViewController = transformViewController;
     }
+
+    [UIComponent("tabSelector")]
+    private TabSelector? _tabSelector = null;
 
     #region Menu
 
@@ -48,6 +66,13 @@ public class KrimTweaksViewController : BSMLAutomaticViewController
     {
         get => _config.Menu.RemoveMenuNotes;
         set => _config.Menu.RemoveMenuNotes = value;
+    }
+    
+    [UIValue("menu-disable-anniversary")]
+    protected bool MenuDisableAnniversary
+    {
+        get => _config.Menu.DisableAnniversary;
+        set => _config.Menu.DisableAnniversary = value;
     }
 
     #endregion
@@ -191,4 +216,58 @@ public class KrimTweaksViewController : BSMLAutomaticViewController
     }
     
     #endregion
+
+    #region Extras
+
+    [UIValue("extras-disable-scrolling")]
+    protected bool ExtrasDisableScrolling
+    {
+        get => _config.Extras.DisableScrolling;
+        set => _config.Extras.DisableScrolling = value;
+    }
+    
+    [UIValue("extras-play-warning")]
+    protected bool ExtrasPlayWarning
+    {
+        get => _config.Extras.ShowWarningOnPlay;
+        set => _config.Extras.ShowWarningOnPlay = value;
+    }
+
+    #endregion
+
+    #region Formatters
+
+    [UIAction("formatter-percent")]
+    public string PercentFormatter(float f)
+    {
+        return $"{Math.Round(f * 100)}%";
+    }
+
+    #endregion
+
+    [UIAction("tab-switch")]
+    public void TabSwitch(SegmentedControl control, int index)
+    {
+        if (index == 3)
+        {
+            _flowCoordinator.SetLeftViewController(_effectsViewController);
+            _flowCoordinator.SetRightViewController(_transformViewController);
+        }
+        else
+        {
+            _flowCoordinator.SetLeftViewController(null);
+            _flowCoordinator.SetRightViewController(null);
+        }
+    }
+
+    protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
+    {
+        base.DidActivate(firstActivation, addedToHierarchy, screenSystemEnabling);
+        
+        if (_tabSelector == null) return;
+        _tabSelector.textSegmentedControl.SelectCellWithNumber(0);
+        _tabSelector.Refresh();
+        _tabSelector.Setup();
+    }
+    
 }

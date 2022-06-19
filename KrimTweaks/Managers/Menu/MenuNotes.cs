@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using KrimTweaks.Configuration;
-using SiraUtil.Logging;
 using UnityEngine;
 using Zenject;
 
-namespace KrimTweaks.Behaviours.Menu;
+namespace KrimTweaks.Managers.Menu;
 
 // ReSharper disable FieldCanBeMadeReadOnly.Local
-internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
+internal class MenuNotes : IInitializable, IDisposable
 {
-#pragma warning disable CS8618
-    [Inject] private PluginConfig _config = null!;
-#pragma warning restore CS8618
+    private static List<GameObject> _disabledNotes = new();
+    private static bool _lastState = false;
     
-    private static readonly List<GameObject> DisabledNotes = new List<GameObject>();
-    private static bool LastState = false;
+    private PluginConfig _config;
+
+    [Inject]
+    public MenuNotes(PluginConfig config)
+    {
+        _config = config;
+    }
 
     public void Initialize()
     {
@@ -28,26 +32,25 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
         _config.PropertyChanged.RemoveListener(Handle);
     }
 
-    private void Start() => Handle();
-
     private void Handle()
     {
-        if (LastState == _config.Menu.RemoveMenuNotes)
-            return;
+        //if (_lastState == _config.Menu.RemoveMenuNotes)
+            //return;
 
-        LastState = _config.Menu.RemoveMenuNotes;
+        _lastState = _config.Menu.RemoveMenuNotes;
         
-        if (_config.Menu.RemoveMenuNotes)
+        if (_lastState)
         {
             var environment = GameObject.Find("MenuEnvironmentManager/DefaultMenuEnvironment");
-            DisabledNotes.Clear();
-            DisabledNotes.AddRange(GetNotes(environment.transform));
-            DisabledNotes.ForEach(go => go.SetActive(false));
+            _disabledNotes = _disabledNotes.Where(go => go != null).ToList();
+            _disabledNotes.AddRange(GetNotes(environment.transform));
+            _disabledNotes.ForEach(go => go.SetActive(false));
         }
         else
         {
-            DisabledNotes.ForEach(go => go.SetActive(true));
-            DisabledNotes.Clear();
+            _disabledNotes = _disabledNotes.Where(go => go is { }).ToList();
+            _disabledNotes.ForEach(go => go.SetActive(true));
+            _disabledNotes.Clear();
         }
     }
 
@@ -56,7 +59,7 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
         var notes = new List<GameObject>(); 
         foreach (Transform obj in parent)
         {
-            if ((IsNote(obj) || IsNoteCollection(obj)) && obj.gameObject.activeSelf)
+            if ((IsNote(obj) || obj.name == "PileOfNotes") && obj.gameObject.activeSelf)
             {
                 notes.Add(obj.gameObject);
             }
@@ -70,11 +73,5 @@ internal class MenuNotes : MonoBehaviour, IInitializable, IDisposable
     {
         var n = transform.name;
         return (n.Contains("Note (") || n.EndsWith("Note")) && !n.Contains("LevitatingNote");
-    }
-
-    private static bool IsNoteCollection(Transform transform)
-    {
-        var n = transform.name;
-        return n == "PileOfNotes";
     }
 }

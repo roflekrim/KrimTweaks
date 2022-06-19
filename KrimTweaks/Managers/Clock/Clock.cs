@@ -6,21 +6,36 @@ using KrimTweaks.UI.Clock;
 using UnityEngine;
 using Zenject;
 
-namespace KrimTweaks.Behaviours.Clock;
+namespace KrimTweaks.Managers.Clock;
 
 // ReSharper disable FieldCanBeMadeReadOnly.Local
-internal class Clock : IInitializable, ITickable
+internal class Clock : IInitializable, IDisposable, ITickable
 {
     [Inject] private PluginConfig _config = null!;
     [Inject] private ClockViewController _viewController = null!;
 
     private FloatingScreen _floatingScreen = null!;
+    private float _hue = 0f;
     
     public void Initialize()
     {
         _floatingScreen = FloatingScreen.CreateFloatingScreen(new Vector2(150f, 50f), false,
-            new Vector3(0.0f, 3f, 3.9f), Quaternion.Euler(325f, 0.0f, 0.0f));
+            _config.Clock.Position, Quaternion.Euler(_config.Clock.Rotation));
         _floatingScreen.SetRootViewController(_viewController, ViewController.AnimationType.Out);
+
+        _config.PropertyChanged.AddListener(Update);
+    }
+
+    public void Dispose()
+    {
+        _config.PropertyChanged.RemoveListener(Update);
+    }
+
+    private void Update()
+    {
+        _floatingScreen.ScreenPosition = _config.Clock.Position;
+        _floatingScreen.ScreenRotation = Quaternion.Euler(_config.Clock.Rotation);
+        _viewController.ClockColor = "#" + ColorUtility.ToHtmlStringRGBA(_config.Clock.Color);
     }
 
     public void Tick()
@@ -30,6 +45,18 @@ internal class Clock : IInitializable, ITickable
             _viewController.ClockText = "";
             return;
         }
+
+        if (_config.Clock.Rainbow)
+        {
+            _hue += 3f / 360f;
+            if (_hue > 1f)
+                _hue -= 1f;
+
+            var color = Color.HSVToRGB(_hue, 1f, 1f);
+            color.a = _config.Clock.Opacity;
+            _viewController.ClockColor = "#" + ColorUtility.ToHtmlStringRGBA(color);
+        }
+        
         var now = DateTime.Now;
         var s = now.ToString(_config.Clock.SelectedTimeFormat);
         

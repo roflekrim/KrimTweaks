@@ -1,0 +1,12 @@
+﻿<vertical child-control-height="false" xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+    <horizontal bg="panel-top-gradient">
+        <text text="Visuals" font-color="white" font-size="5" align="Center" italics="true"/>
+    </horizontal>
+    <horizontal>
+        <vertical>
+            <color-setting text="Color" value="color" apply-on-change="true" />
+            <increment-setting text="Opacity" min="0" max="1" increment="0.1" value="opacity" apply-on-change="true" formatter="f-percent" />
+            <bool-setting text="Rainbow" value="rainbow" apply-on-change="true" />
+        </vertical>
+    </horizontal>
+</vertical>

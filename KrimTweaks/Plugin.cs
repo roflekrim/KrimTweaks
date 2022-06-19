@@ -12,6 +12,9 @@ namespace KrimTweaks;
 [Plugin(RuntimeOptions.DynamicInit), NoEnableDisable]
 public class Plugin
 {
+    internal const string SCORESABER_STATUS_TEXT =
+        "Wrapper/MenuCore/UI/ScreenSystem/ScreenContainer/RightScreen/PlatformLeaderboardViewController/ScoreSaberPanelScreen/PanelView/BSMLBackground/BSMLHorizontalLayoutGroup/BSMLText";
+    
     internal static DateTime Started;
     
     [Init]

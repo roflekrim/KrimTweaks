@@ -1,7 +1,7 @@
-using KrimTweaks.Behaviours.Clock;
-using KrimTweaks.Behaviours.Gameplay;
-using KrimTweaks.Behaviours.VFX;
 using KrimTweaks.Configuration;
+using KrimTweaks.Managers.Clock;
+using KrimTweaks.Managers.Gameplay;
+using KrimTweaks.Managers.VFX;
 using KrimTweaks.UI.Clock;
 using Zenject;
 

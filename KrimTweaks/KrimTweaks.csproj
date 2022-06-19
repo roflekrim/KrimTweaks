@@ -130,8 +130,14 @@
       <Content Include="KrimTweaks.csproj.user" />
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="UI\BSML\Clock\ClockView.bsml" />
       <EmbeddedResource Include="UI\BSML\KrimTweaksView.bsml" />
       <None Remove="UI\BSML\ClockView.bsml" />
-      <EmbeddedResource Include="UI\BSML\ClockView.bsml" />
+      <None Remove="UI\BSML\Clock\ClockEffectsView.bsml" />
+      <EmbeddedResource Include="UI\BSML\Clock\ClockEffectsView.bsml" />
+      <None Remove="UI\BSML\Clock\ClockTransformView.bsml" />
+      <EmbeddedResource Include="UI\BSML\Clock\ClockTransformView.bsml" />
+      <None Remove="UI\BSML\WarningView.bsml" />
+      <EmbeddedResource Include="UI\BSML\WarningView.bsml" />
     </ItemGroup>
 </Project>

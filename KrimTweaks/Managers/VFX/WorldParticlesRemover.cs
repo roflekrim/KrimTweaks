@@ -4,11 +4,17 @@ using KrimTweaks.Configuration;
 using UnityEngine;
 using Zenject;
 
-namespace KrimTweaks.Behaviours.VFX;
+namespace KrimTweaks.Managers.VFX;
 
-internal class WorldParticlesRemover : MonoBehaviour, IInitializable, IDisposable
+internal class WorldParticlesRemover : IInitializable, IDisposable
 {
-    [Inject] private PluginConfig _config = null!;
+    private PluginConfig _config;
+
+    [Inject]
+    public WorldParticlesRemover(PluginConfig config)
+    {
+        _config = config;
+    }
     
     public void Initialize()
     {

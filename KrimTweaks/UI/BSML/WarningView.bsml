@@ -1,0 +1,4 @@
+﻿<vertical horizontal-fit="PreferredSize" vertical-fit="PreferredSize" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd">
+    <text id="warning-text" text="~warning-text" align="Center" rich-text="true" font-size="6"  />
+    <button on-click="cancel" text="Understood" pad-top="15" pref-width="40" font-size="5" />
+</vertical>

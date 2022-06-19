@@ -1,5 +1,5 @@
 <vertical child-control-height="false" spacing="2" xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
-    <tab-selector tab-tag="tabs" id="tabSelector" />
+    <tab-selector tab-tag="tabs" id="tabSelector" select-cell="tab-switch" />
     
     <tab tags="tabs" tab-name="Menu">
         <horizontal>
@@ -15,6 +15,9 @@
                 />
                 <bool-setting text="Remove Menu Notes" value="menu-remove-notes" apply-on-change="true"
                               hover-hint="Removes the decorative notes"
+                />
+                <bool-setting text="Disable Anniversary Celebration" value="menu-disable-anniversary" apply-on-change="true"
+                              hover-hint="Disables anniversary-related fireworks and banners"
                 />
             </vertical>
         </horizontal>
@@ -86,6 +89,22 @@
                 <dropdown-list-setting text="Time Format" apply-on-change="true" 
                                        options="clock-formats" value="clock-format"
                                        formatter="clock-formatter"
+                />
+            </vertical>
+        </horizontal>
+    </tab>
+    
+    <tab tags="tabs" tab-name="Extras">
+        <horizontal>
+            <vertical>
+                <bool-setting text="Disable Scrolling"
+                              value="extras-disable-scrolling"
+                              apply-on-change="true"
+                />
+                <bool-setting text="Show Warning When Unauthorized"
+                              value="extras-play-warning"
+                              apply-on-change="true"
+                              hover-hint="Shows a warning when starting a map while score submission is unavailable"
                 />
             </vertical>
         </horizontal>
