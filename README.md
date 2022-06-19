@@ -4,21 +4,38 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 
 ## Features
 
-- Disable debris
-- Remove certain particles / effects
-- Remove music group logos in environments
-- Remove anniversary-related fireworks and banners
-- Add static lights toggle back
-- Remove promotional banners
+#### Menu
 - Skip health warning
-- Disable beat lines
-- Disable camera noise / dither
-- Disable controller rumble
+- Remove promotional banners
 - Remove menu notes
-- Clock
-- Session length
-- Show warning when ScoreSaber is unauthorized
+- Add static lights toggle
+- Remove aniiversary-related fireworks and banners
+
+#### Gameplay
+- Disable debris
+- Remove music group logos in certain environments
+- Disable beat lines
+- Disable controller rumble
+
+#### VFX
+- Remove cut particles
+- Remove obstacle particles/burn marks
+- Remove saber clash
+- Remove floor particles/burn marks
+- Remove camera noise / dither
+- Remove bomb particles
+- Remove full combo break effect
+
+#### Clock
+- Show session length
+- Custom time formats
+- Settable color and opacity
+- Rainbow
+- Settable position and rotation
+
+#### Extras
 - Disable scrolling
+- Show warning when ScoreSaber is unauthorized
 
 ## Disclaimer
 
