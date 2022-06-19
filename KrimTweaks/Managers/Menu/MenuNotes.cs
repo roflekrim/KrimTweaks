@@ -34,12 +34,7 @@ internal class MenuNotes : IInitializable, IDisposable
 
     private void Handle()
     {
-        //if (_lastState == _config.Menu.RemoveMenuNotes)
-            //return;
-
-        _lastState = _config.Menu.RemoveMenuNotes;
-        
-        if (_lastState)
+        if (_config.Menu.RemoveMenuNotes)
         {
             var environment = GameObject.Find("MenuEnvironmentManager/DefaultMenuEnvironment");
             _disabledNotes = _disabledNotes.Where(go => go != null).ToList();
@@ -48,7 +43,7 @@ internal class MenuNotes : IInitializable, IDisposable
         }
         else
         {
-            _disabledNotes = _disabledNotes.Where(go => go is { }).ToList();
+            _disabledNotes = _disabledNotes.Where(go => go != null).ToList();
             _disabledNotes.ForEach(go => go.SetActive(true));
             _disabledNotes.Clear();
         }
