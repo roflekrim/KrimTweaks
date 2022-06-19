@@ -22,6 +22,6 @@ internal class GameInstaller : Installer
             Container.BindInterfacesTo<Clock>().AsSingle();
         }
 
-        Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().FromNewComponentOnNewGameObject().AsSingle();
+        Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().AsSingle();
     }
 }
