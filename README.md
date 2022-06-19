@@ -4,18 +4,20 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 
 ## Features
 
-- [x] Disable debris
-- [x] Remove certain particles / effects
-- [x] Remove music group logos in environments
-- [x] Add static lights toggle back
-- [x] Remove promotional banners
-- [x] Skip health warning
-- [x] Disable beat lines
-- [x] Disable camera noise / dither
-- [x] Disable controller rumble
-- [x] Remove menu notes
-- [x] Clock
-- [x] Session length
+- Disable debris
+- Remove certain particles / effects
+- Remove music group logos in environments
+- Remove anniversary-related fireworks and banners
+- Add static lights toggle back
+- Remove promotional banners
+- Skip health warning
+- Disable beat lines
+- Disable camera noise / dither
+- Disable controller rumble
+- Remove menu notes
+- Clock
+- Session length
+- Show warning when ScoreSaber is unauthorized
 
 ## Disclaimer
 
