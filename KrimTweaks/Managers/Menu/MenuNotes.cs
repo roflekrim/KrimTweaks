@@ -11,8 +11,7 @@ namespace KrimTweaks.Managers.Menu;
 internal class MenuNotes : IInitializable, IDisposable
 {
     private static List<GameObject> _disabledNotes = new();
-    private static bool _lastState = false;
-    
+
     private PluginConfig _config;
 
     [Inject]
