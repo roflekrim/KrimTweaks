@@ -18,6 +18,7 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - Clock
 - Session length
 - Show warning when ScoreSaber is unauthorized
+- Disable scrolling
 
 ## Disclaimer
 
