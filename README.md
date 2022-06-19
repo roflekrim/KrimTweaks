@@ -22,4 +22,4 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 
 ## Disclaimer
 
-Most feature ideas are taken from [Tweaks55](https://github.com/kinsi55/BeatSaber_Tweaks55), [BeatSaberPlus](https://discord.gg/63ebPMC), [Enhancements](https://github.com/Auros/Enhancements) and [NalulunaMenu](https://twitter.com/nalulululuna)
+Most feature ideas are taken from [Tweaks55](https://github.com/kinsi55/BeatSaber_Tweaks55), [BeatSaberPlus](https://github.com/hardcpp/BeatSaberPlus), [Enhancements](https://github.com/Auros/Enhancements) and [NalulunaMenu](https://twitter.com/nalulululuna)
