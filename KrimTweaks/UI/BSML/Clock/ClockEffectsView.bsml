@@ -2,11 +2,11 @@
     <horizontal bg="panel-top-gradient">
         <text text="Visuals" font-color="white" font-size="5" align="Center" italics="true"/>
     </horizontal>
-    <horizontal>
-        <vertical>
-            <color-setting text="Color" value="color" apply-on-change="true" />
-            <increment-setting text="Opacity" min="0" max="1" increment="0.1" value="opacity" apply-on-change="true" formatter="f-percent" />
-            <bool-setting text="Rainbow" value="rainbow" apply-on-change="true" />
-        </vertical>
-    </horizontal>
+    <macro.as-host host="_config">
+        <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+            <color-setting text="Color" value="Color" apply-on-change="true" />
+            <increment-setting text="Opacity" min="0" max="1" increment="0.1" value="Opacity" apply-on-change="true" formatter="PercentFormatter" />
+            <bool-setting text="Rainbow" value="Rainbow" apply-on-change="true" />
+        </modifier-container>
+    </macro.as-host>
 </vertical>

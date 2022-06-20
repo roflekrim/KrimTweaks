@@ -2,111 +2,121 @@
     <tab-selector tab-tag="tabs" id="tabSelector" select-cell="tab-switch" />
     
     <tab tags="tabs" tab-name="Menu">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Static Lights Toggle" value="menu-static-lights" apply-on-change="true"
-                              hover-hint="Merges the light effect filters into a single toggle"
-                />
-                <bool-setting text="Remove Promotional Banners" value="menu-promo-banners" apply-on-change="true"
-                              hover-hint="Removes promotional banners for DLCs"
-                />
-                <bool-setting text="Skip Health Warning" value="menu-skip-health" apply-on-change="true"
-                              hover-hint="Skips the health warning shown at startup"
-                />
-                <bool-setting text="Remove Menu Notes" value="menu-remove-notes" apply-on-change="true"
-                              hover-hint="Removes the decorative notes"
-                />
-                <bool-setting text="Disable Anniversary Celebration" value="menu-disable-anniversary" apply-on-change="true"
-                              hover-hint="Disables anniversary-related fireworks and banners"
-                />
-            </vertical>
-        </horizontal>
+        <macro.as-host host="_config">
+            <macro.as-host host="Menu">
+                <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+                    <bool-setting text="Static Lights Toggle" value="UseStaticLightsToggle" apply-on-change="true"
+                                  hover-hint="Merges the light effect filters into a single toggle"
+                    />
+                    <bool-setting text="Remove Promotional Banners" value="RemovePromoBanners" apply-on-change="true"
+                                  hover-hint="Removes promotional banners for DLCs"
+                    />
+                    <bool-setting text="Skip Health Warning" value="SkipHealthWarning" apply-on-change="true"
+                                  hover-hint="Skips the health warning shown at startup"
+                    />
+                    <bool-setting text="Remove Menu Notes" value="RemoveMenuNotes" apply-on-change="true"
+                                  hover-hint="Removes the decorative notes"
+                    />
+                    <bool-setting text="Disable Anniversary Celebration" value="DisableAnniversary" apply-on-change="true"
+                                  hover-hint="Disables anniversary-related fireworks and banners"
+                    />
+                </modifier-container>
+            </macro.as-host>
+        </macro.as-host>
     </tab>
     
     <tab tags="tabs" tab-name="Gameplay">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Disable Debris" value="gameplay-debris" apply-on-change="true" />
-                <bool-setting text="Remove Music Group Logos" value="gameplay-group-logos" apply-on-change="true"
-                              hover-hint="Removes music group logos in environments such as Linkin Park or BTS" 
-                />
-                <bool-setting text="Disable Beat Lines" value="gameplay-beat-lines" apply-on-change="true"
-                              hover-hint="Disables the lights on the floor which indicate where notes spawn"
-                />
-                <bool-setting text="Disable Controller Rumble" value="gameplay-rumble" apply-on-change="true"
-                              hover-hint="Disables controller rumble"
-                />
-            </vertical>
-        </horizontal>
+        <macro.as-host host="_config">
+            <macro.as-host host="Gameplay">
+                <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+                    <bool-setting text="Disable Debris" value="DisableDebris" apply-on-change="true" />
+                    <bool-setting text="Remove Music Group Logos" value="RemoveMusicGroupLogos" apply-on-change="true"
+                                  hover-hint="Removes music group logos in environments such as Linkin Park or BTS" 
+                    />
+                    <bool-setting text="Disable Beat Lines" value="DisableBeatLines" apply-on-change="true"
+                                  hover-hint="Disables the lights on the floor which indicate where notes spawn"
+                    />
+                    <bool-setting text="Disable Controller Rumble" value="DisableRumble" apply-on-change="true"
+                                  hover-hint="Disables controller rumble"
+                    />
+                </modifier-container>
+            </macro.as-host>
+        </macro.as-host>
     </tab>
     
     <tab tags="tabs" tab-name="Effects / Particles">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Disable World Particles" value="vfx-world" apply-on-change="true"
-                              hover-hint="Disables world particles"
-                />
-                <bool-setting text="Disable Cut Particles" value="vfx-cut" apply-on-change="true"
-                              hover-hint="Disables particles spawned when cutting a note"
-                />
-                <bool-setting text="Disable Bomb Particles" value="vfx-bomb" apply-on-change="true"
-                              hover-hint="Disables particles when hitting a bomb"
-                />
-                <bool-setting text="Disable Saber Clash" value="vfx-saber-clash" apply-on-change="true"
-                              hover-hint="Disables particles and rumble when both sabers collide"
-                />
-                <bool-setting text="Disable Obstacle Particles" value="vfx-obstacle" apply-on-change="true"
-                              hover-hint="Disables particles and burn marks when a saber touches an obstacle"
-                />
-                <bool-setting text="Disable Floor Burn Particles" value="vfx-floor-particles" apply-on-change="true"
-                              hover-hint="Disables particles spawned when a saber touches the floor"
-                />
-                <bool-setting text="Disable Floor Burn Marks" value="vfx-floor-marks" apply-on-change="true"
-                              hover-hint="Disables marks spawned when a saber touches the floor"
-                />
-                <bool-setting text="Disable Full Combo Break" value="vfx-fc-break" apply-on-change="true"
-                              hover-hint="Disables full combo break animation"
-                />
-                <bool-setting text="Disable Camera Noise / Dither" value="vfx-cam-noise-dither" apply-on-change="true"
-                              hover-hint="Disables the random noise / dithering applied by Beat Saber"
-                />
-            </vertical>
-        </horizontal>
+        <macro.as-host host="_config">
+            <macro.as-host host="VFX">
+                <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+                    <bool-setting text="Disable World Particles" value="DisableWorldParticles" apply-on-change="true"
+                                  hover-hint="Disables world particles"
+                    />
+                    <bool-setting text="Disable Cut Particles" value="DisableCutParticles" apply-on-change="true"
+                                  hover-hint="Disables particles spawned when cutting a note"
+                    />
+                    <bool-setting text="Disable Bomb Particles" value="DisableBombParticles" apply-on-change="true"
+                                  hover-hint="Disables particles when hitting a bomb"
+                    />
+                    <bool-setting text="Disable Saber Clash" value="DisableSaberClash" apply-on-change="true"
+                                  hover-hint="Disables particles and rumble when both sabers collide"
+                    />
+                    <bool-setting text="Disable Obstacle Particles" value="DisableObstacleParticles" apply-on-change="true"
+                                  hover-hint="Disables particles and burn marks when a saber touches an obstacle"
+                    />
+                    <bool-setting text="Disable Floor Burn Particles" value="DisableFloorBurnParticles" apply-on-change="true"
+                                  hover-hint="Disables particles spawned when a saber touches the floor"
+                    />
+                    <bool-setting text="Disable Floor Burn Marks" value="DisableFloorBurnMarks" apply-on-change="true"
+                                  hover-hint="Disables marks spawned when a saber touches the floor"
+                    />
+                    <bool-setting text="Disable Full Combo Break" value="DisableFullComboBreak" apply-on-change="true"
+                                  hover-hint="Disables full combo break animation"
+                    />
+                    <bool-setting text="Disable Camera Noise / Dither" value="DisableCameraNoiseDither" apply-on-change="true"
+                                  hover-hint="Disables the random noise / dithering applied by Beat Saber"
+                    />
+                </modifier-container>
+            </macro.as-host>
+        </macro.as-host>
     </tab>
 
     <tab tags="tabs" tab-name="Clock">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Enable Clock" value="clock-enable" apply-on-change="true" 
-                              hover-hint="Adds a clock"
-                />
-                <bool-setting text="Show In-Song" value="clock-in-song" apply-on-change="true"
-                              hover-hint="Decides if the clock is being shown when playing a song"
-                />
-                <bool-setting text="Add Session Length" value="clock-session-length" apply-on-change="true"
-                              hover-hint="Adds a session timer below the clock"
-                />
-                <dropdown-list-setting text="Time Format" apply-on-change="true" 
-                                       options="clock-formats" value="clock-format"
-                                       formatter="clock-formatter"
-                />
-            </vertical>
-        </horizontal>
+        <macro.as-host host="_config">
+            <macro.as-host host="Clock">
+                <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+                    <bool-setting text="Enable Clock" value="Enabled" apply-on-change="true" 
+                                  hover-hint="Adds a clock"
+                    />
+                    <bool-setting text="Show In-Song" value="ShowInSong" apply-on-change="true"
+                                  hover-hint="Decides if the clock is being shown when playing a song"
+                    />
+                    <bool-setting text="Add Session Length" value="DisplaySessionLength" apply-on-change="true"
+                                  hover-hint="Adds a session timer below the clock"
+                    />
+                    <dropdown-list-setting text="Time Format" apply-on-change="true" 
+                                           options="BsmlTimeFormats" value="SelectedTimeFormat"
+                                           formatter="DateFormatter"
+                    />
+                </modifier-container>
+            </macro.as-host>
+        </macro.as-host>
     </tab>
     
     <tab tags="tabs" tab-name="Extras">
-        <horizontal>
-            <vertical>
-                <bool-setting text="Disable Scrolling"
-                              value="extras-disable-scrolling"
-                              apply-on-change="true"
-                />
-                <bool-setting text="Show Warning When Unauthorized"
-                              value="extras-play-warning"
-                              apply-on-change="true"
-                              hover-hint="Shows a warning when starting a map while score submission is unavailable"
-                />
-            </vertical>
-        </horizontal>
+        <macro.as-host host="_config">
+            <macro.as-host host="Extras">
+                <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+                    <bool-setting text="Disable Scrolling"
+                                  value="DisableScrolling"
+                                  apply-on-change="true"
+                    />
+                    <bool-setting text="Show Warning When Unauthorized"
+                                  value="ShowWarningOnPlay"
+                                  apply-on-change="true"
+                                  hover-hint="Shows a warning when starting a map while score submission is unavailable"
+                    />
+                </modifier-container>
+            </macro.as-host>
+        </macro.as-host>
     </tab>
 </vertical>

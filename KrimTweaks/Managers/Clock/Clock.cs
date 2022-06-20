@@ -20,10 +20,11 @@ internal class Clock : IInitializable, IDisposable, ITickable
     public void Initialize()
     {
         _floatingScreen = FloatingScreen.CreateFloatingScreen(new Vector2(150f, 50f), false,
-            _config.Clock.Position, Quaternion.Euler(_config.Clock.Rotation));
+            _config.Clock.Position.Value, Quaternion.Euler(_config.Clock.Rotation.Value));
         _floatingScreen.SetRootViewController(_viewController, ViewController.AnimationType.Out);
 
         _config.PropertyChanged.AddListener(Update);
+        Update();
     }
 
     public void Dispose()
@@ -33,9 +34,12 @@ internal class Clock : IInitializable, IDisposable, ITickable
 
     private void Update()
     {
-        _floatingScreen.ScreenPosition = _config.Clock.Position;
-        _floatingScreen.ScreenRotation = Quaternion.Euler(_config.Clock.Rotation);
-        _viewController.ClockColor = "#" + ColorUtility.ToHtmlStringRGBA(_config.Clock.Color);
+        _floatingScreen.ScreenPosition = _config.Clock.Position.Value;
+        _floatingScreen.ScreenRotation = Quaternion.Euler(_config.Clock.Rotation.Value);
+
+        var clockColor = _config.Clock.Color;
+        clockColor.a = _config.Clock.Opacity;
+        _viewController.ClockColor = "#" + ColorUtility.ToHtmlStringRGBA(clockColor);
     }
 
     public void Tick()

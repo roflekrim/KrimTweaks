@@ -2,14 +2,18 @@
     <horizontal bg="panel-top-gradient" anchor-pos-y="-1">
         <text text="Transform" font-color="white" font-size="5" align="Center" italics="true"/>
     </horizontal>
-    <horizontal>
-        <vertical>
-            <increment-setting text="Position X" increment="0.1" value="pos-x" apply-on-change="true" />
-            <increment-setting text="Position Y" increment="0.1" value="pos-y" apply-on-change="true" />
-            <increment-setting text="Position Z" increment="0.1" value="pos-z" apply-on-change="true" />
-            <increment-setting text="Rotation X" increment="5" value="rot-x" apply-on-change="true" formatter="f-deg" />
-            <increment-setting text="Rotation Y" increment="5" value="rot-y" apply-on-change="true" formatter="f-deg" />
-            <increment-setting text="Rotation Z" increment="5" value="rot-z" apply-on-change="true" formatter="f-deg" />
-        </vertical>
-    </horizontal>
+    <macro.as-host host="_config">
+        <modifier-container child-expand-width="true" horizontal-fit="PreferredSize">
+            <macro.as-host host="Position">
+                <increment-setting text="Position X" increment="0.1" value="X" apply-on-change="true" />
+                <increment-setting text="Position Y" increment="0.1" value="Y" apply-on-change="true" />
+                <increment-setting text="Position Z" increment="0.1" value="Z" apply-on-change="true" />
+            </macro.as-host>
+            <macro.as-host host="Rotation">
+                <increment-setting text="Rotation X" increment="5" value="X" apply-on-change="true" formatter="DegreeFormatter" />
+                <increment-setting text="Rotation Y" increment="5" value="Y" apply-on-change="true" formatter="DegreeFormatter" />
+                <increment-setting text="Rotation Z" increment="5" value="Z" apply-on-change="true" formatter="DegreeFormatter" />
+            </macro.as-host>
+        </modifier-container>
+    </macro.as-host>
 </vertical>

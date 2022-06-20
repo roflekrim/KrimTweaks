@@ -17,7 +17,7 @@ internal class FullComboBreak : IAffinity
     // ReSharper disable InconsistentNaming
     internal bool Prefix(ComboUIController __instance, ref bool ____fullComboLost)
     {
-        if (!_config.VFX.DisableObstacleParticles)
+        if (!_config.VFX.DisableFullComboBreak)
             return true;
 
         if (____fullComboLost) return true;

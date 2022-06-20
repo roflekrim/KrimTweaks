@@ -18,6 +18,7 @@ internal class SaberClash : IAffinity
     // ReSharper disable once RedundantAssignment
     internal bool Prefix(ref bool __result)
     {
+        if (!_config.VFX.DisableSaberClash) return true;
         __result = false;
         return false;
     }
