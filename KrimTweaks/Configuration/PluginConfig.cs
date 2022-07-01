@@ -174,7 +174,7 @@ public class ExtrasConfig
 {
     public virtual bool DisableScrolling { get; set; } = false;
     public virtual bool ShowWarningOnPlay { get; set; } = false;
-    public virtual int ExtraColorSchemeCount { get; set; } = 4;
+    public virtual int ExtraColorSchemeCount { get; set; } = 0;
     public virtual string SelectedColorSchemeId { get; set; } = "";
 
     [NonNullable]
