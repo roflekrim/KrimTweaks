@@ -54,6 +54,53 @@ public class XVector3
     }
 }
 
+public class XColorScheme
+{
+    internal string Id = "Default";
+    internal string NameLocalizationKey = "Default";
+    internal bool SupportsEnvironmentColorBoost;
+    internal Color SaberA = Color.white;
+    internal Color SaberB = Color.white;
+    internal Color EnvironmentA = Color.white;
+    internal Color EnvironmentB = Color.white;
+    internal Color EnvironmentBoostA = Color.white;
+    internal Color EnvironmentBoostB = Color.white;
+    internal Color Obstacles = Color.white;
+
+    public XColorScheme() {}
+
+    public XColorScheme(ColorScheme colorScheme)
+    {
+        Id = colorScheme.colorSchemeId;
+        NameLocalizationKey = colorScheme.colorSchemeNameLocalizationKey;
+        SupportsEnvironmentColorBoost = colorScheme.supportsEnvironmentColorBoost;
+        SaberA = colorScheme.saberAColor;
+        SaberB = colorScheme.saberBColor;
+        EnvironmentA = colorScheme.environmentColor0;
+        EnvironmentB = colorScheme.environmentColor1;
+        EnvironmentBoostA = colorScheme.environmentColor0Boost;
+        EnvironmentBoostB = colorScheme.environmentColor1Boost;
+        Obstacles = colorScheme.obstaclesColor;
+    }
+
+    public ColorScheme ToColorScheme()
+    {
+        return new ColorScheme(Id,
+            NameLocalizationKey,
+            false,
+            Id,
+            true,
+            SaberA,
+            SaberB,
+            EnvironmentA,
+            EnvironmentB,
+            SupportsEnvironmentColorBoost,
+            EnvironmentBoostA,
+            EnvironmentBoostB,
+            Obstacles);
+    }
+}
+
 #endregion
 
 #region Sub Configurations
@@ -127,6 +174,12 @@ public class ExtrasConfig
 {
     public virtual bool DisableScrolling { get; set; } = false;
     public virtual bool ShowWarningOnPlay { get; set; } = false;
+    public virtual int ExtraColorSchemeCount { get; set; } = 4;
+    public virtual string SelectedColorSchemeId { get; set; } = "";
+
+    [NonNullable]
+    [UseConverter(typeof(ListConverter<XColorScheme>))]
+    public virtual List<XColorScheme> ExtraColorSchemes { get; set; } = new();
 }
 
 #endregion

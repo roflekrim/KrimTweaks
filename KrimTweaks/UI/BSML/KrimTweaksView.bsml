@@ -115,6 +115,11 @@
                                   apply-on-change="true"
                                   hover-hint="Shows a warning when starting a map while score submission is unavailable"
                     />
+                    <increment-setting text="Extra Color Schemes" min="0" increment="1" integer-only="true"
+                                       value="ExtraColorSchemeCount"
+                                       apply-on-change="true"
+                                       hover-hint="Amount of additional custom color schemes"
+                    />
                 </modifier-container>
             </macro.as-host>
         </macro.as-host>

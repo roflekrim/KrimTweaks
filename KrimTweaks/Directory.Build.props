@@ -5,7 +5,7 @@
   <PropertyGroup>
     <AssemblyName>KrimTweaks</AssemblyName>
     <Authors>roflekrim</Authors>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <GameVersion>1.23.0</GameVersion>
     <Description>Provides a collection of tweaks to improve the game experience</Description>
     <ProjectSource>https://github.com/roflekrim/KrimTweaks</ProjectSource>

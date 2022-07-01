@@ -20,12 +20,16 @@ public class Plugin
     [Init]
     public void Init(Zenjector zenjector, IPALogger logger, Config config)
     {
+        var conf = config.Generated<PluginConfig>();
+        if (!conf.Enabled)
+            return;
+        
         Started = DateTime.Now;
 
         zenjector.UseLogger(logger);
         zenjector.UseMetadataBinder<Plugin>();
         
-        zenjector.Install<AppInstaller>(Location.App, config.Generated<PluginConfig>());
+        zenjector.Install<AppInstaller>(Location.App, conf);
         zenjector.Install<MenuInstaller>(Location.Menu);
         zenjector.Install<GameInstaller>(Location.GameCore);
     }

@@ -5,6 +5,7 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 ## Features
 
 #### Menu
+
 - Skip health warning
 - Remove promotional banners
 - Remove menu notes
@@ -12,12 +13,14 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - Remove anniversary-related fireworks and banners
 
 #### Gameplay
+
 - Disable debris
 - Remove music group logos in certain environments
 - Disable beat lines
 - Disable controller rumble
 
 #### VFX
+
 - Remove cut particles
 - Remove obstacle particles/burn marks
 - Remove saber clash
@@ -27,6 +30,7 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - Remove full combo break effect
 
 #### Clock
+
 - Show session length
 - Custom time formats
 - Settable color and opacity
@@ -34,9 +38,11 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - Settable position and rotation
 
 #### Extras
+
 - Disable scrolling
 - Show warning when ScoreSaber is unauthorized
+- Extra custom color schemes
 
 ## Disclaimer
 
-Most feature ideas are taken from [Tweaks55](https://github.com/kinsi55/BeatSaber_Tweaks55), [BeatSaberPlus](https://github.com/hardcpp/BeatSaberPlus), [Enhancements](https://github.com/Auros/Enhancements) and [NalulunaMenu](https://twitter.com/nalulululuna)
+Most feature ideas are taken from [Tweaks55](https://github.com/kinsi55/BeatSaber_Tweaks55), [BeatSaberPlus](https://github.com/hardcpp/BeatSaberPlus), [Enhancements](https://github.com/Auros/Enhancements), [NalulunaMenu](https://twitter.com/nalulululuna) and [ExtendedColorSchemes](https://github.com/Meivyn/ExtendedColorSchemes)

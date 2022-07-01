@@ -1,8 +1,9 @@
-using KrimTweaks.Affinity_Patches;
+using KrimTweaks.Affinity_Patches.Extras;
 using KrimTweaks.Affinity_Patches.Gameplay;
 using KrimTweaks.Affinity_Patches.Menu;
 using KrimTweaks.Affinity_Patches.VFX;
 using KrimTweaks.Configuration;
+using KrimTweaks.Managers;
 using Zenject;
 
 namespace KrimTweaks.Installers;
@@ -19,6 +20,7 @@ internal class AppInstaller : Installer
     public override void InstallBindings()
     {
         Container.BindInstance(_config);
+        Container.BindInterfacesAndSelfTo<Localizer>().AsSingle();
         
         if (_config.Menu.SkipHealthWarning)
             Container.BindInterfacesTo<HealthWarning>().AsSingle();
@@ -40,5 +42,6 @@ internal class AppInstaller : Installer
         Container.BindInterfacesTo<FullComboBreak>().AsSingle();
 
         Container.BindInterfacesTo<DisableScrolling>().AsSingle();
+        Container.BindInterfacesTo<ExtraColorSchemes>().AsSingle();
     }
 }
