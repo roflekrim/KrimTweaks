@@ -156,6 +156,7 @@ internal class ExtraColorSchemes : IAffinity, IInitializable, IDisposable
         var idx = _extrasConfig.ExtraColorSchemes.FindIndex(x => x.Id == colorScheme.colorSchemeId);
         if (idx == -1) return;
         _extrasConfig.ExtraColorSchemes[idx] = new XColorScheme(colorScheme);
+        _config.Changed();
     }
 
     [AffinityPostfix]
