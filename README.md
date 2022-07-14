@@ -10,7 +10,6 @@ A collection of tweaks for Beat Saber. Mostly made for myself.
 - Remove promotional banners
 - Remove menu notes
 - Add static lights toggle
-- Remove anniversary-related fireworks and banners
 
 #### Gameplay
 
