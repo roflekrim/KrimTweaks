@@ -1,18 +1,19 @@
 ﻿using System;
 using KrimTweaks.Configuration;
 using Polyglot;
+using SiraUtil.Attributes;
 using UnityEngine;
 using Zenject;
 
 namespace KrimTweaks.Managers;
 
+[Bind]
 internal class Localizer : IInitializable, IDisposable
 {
     internal static LocalizationAsset? LocalizationAsset;
 
     private PluginConfig _config;
-
-    [Inject]
+    
     public Localizer(PluginConfig config)
     {
         _config = config;

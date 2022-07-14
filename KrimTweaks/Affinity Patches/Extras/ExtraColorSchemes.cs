@@ -24,11 +24,13 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using Zenject;
 
 namespace KrimTweaks.Affinity_Patches.Extras;
 
 // ReSharper disable InconsistentNaming
+[Bind]
 internal class ExtraColorSchemes : IAffinity, IInitializable, IDisposable
 {
     internal static bool IsSaving = false;

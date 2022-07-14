@@ -17,9 +17,11 @@
                     <bool-setting text="Remove Menu Notes" value="RemoveMenuNotes" apply-on-change="true"
                                   hover-hint="Removes the decorative notes"
                     />
+                    <!--
                     <bool-setting text="Disable Anniversary Celebration" value="DisableAnniversary" apply-on-change="true"
                                   hover-hint="Disables anniversary-related fireworks and banners"
                     />
+                    !-->
                 </modifier-container>
             </macro.as-host>
         </macro.as-host>

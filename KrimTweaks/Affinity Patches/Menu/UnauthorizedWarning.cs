@@ -5,11 +5,14 @@ using IPA.Utilities;
 using KrimTweaks.Configuration;
 using KrimTweaks.UI.LevelSelectionWarning;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using SiraUtil.Logging;
+using SiraUtil.Zenject;
 using UnityEngine;
 
 namespace KrimTweaks.Affinity_Patches.Menu;
 
+[Bind(Location.Menu)]
 internal class UnauthorizedWarning : IAffinity
 {
     private static readonly string[] UnauthorizedMessages = new[]

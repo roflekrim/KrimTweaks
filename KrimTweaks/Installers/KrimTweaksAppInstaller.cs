@@ -20,28 +20,5 @@ internal class AppInstaller : Installer
     public override void InstallBindings()
     {
         Container.BindInstance(_config);
-        Container.BindInterfacesAndSelfTo<Localizer>().AsSingle();
-        
-        if (_config.Menu.SkipHealthWarning)
-            Container.BindInterfacesTo<HealthWarning>().AsSingle();
-
-        Container.BindInterfacesTo<StaticLightsToggle>().AsSingle();
-        Container.BindInterfacesTo<PromoBanner>().AsSingle();
-
-        Container.BindInterfacesTo<RemoveDebris>().AsSingle();
-        Container.BindInterfacesTo<DisableBeatLines>().AsSingle();
-        Container.BindInterfacesTo<DisableRumble>().AsSingle();
-
-        Container.BindInterfacesTo<CameraNoise>().AsSingle();
-        Container.BindInterfacesTo<CutParticles>().AsSingle();
-        Container.BindInterfacesTo<BombCutParticles>().AsSingle();
-        Container.BindInterfacesTo<SaberClash>().AsSingle();
-        Container.BindInterfacesTo<ObstacleHitEffect>().AsSingle();
-        Container.BindInterfacesTo<SaberBurnSparkles>().AsSingle();
-        Container.BindInterfacesTo<SaberBurnArea>().AsSingle();
-        Container.BindInterfacesTo<FullComboBreak>().AsSingle();
-
-        Container.BindInterfacesTo<DisableScrolling>().AsSingle();
-        Container.BindInterfacesTo<ExtraColorSchemes>().AsSingle();
     }
 }

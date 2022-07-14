@@ -58,7 +58,7 @@ public class XColorScheme
 {
     internal string Id = "Default";
     internal string NameLocalizationKey = "Default";
-    internal bool SupportsEnvironmentColorBoost;
+    internal bool SupportsEnvironmentColorBoost = true;
     internal Color SaberA = Color.white;
     internal Color SaberB = Color.white;
     internal Color EnvironmentA = Color.white;

@@ -52,7 +52,7 @@ internal class Clock : IInitializable, IDisposable, ITickable
 
         if (_config.Clock.Rainbow)
         {
-            _hue += 3f / 360f;
+            _hue += 0.008333f;
             if (_hue > 1f)
                 _hue -= 1f;
 

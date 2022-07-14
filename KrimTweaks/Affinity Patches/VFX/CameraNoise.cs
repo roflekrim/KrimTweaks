@@ -24,10 +24,12 @@ SOFTWARE.
 
 using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using UnityEngine;
 
 namespace KrimTweaks.Affinity_Patches.VFX;
 
+[Bind]
 internal class CameraNoise : IAffinity
 {
     private static readonly int GlobalNoiseTextureID = Shader.PropertyToID("_GlobalBlueNoiseTex");

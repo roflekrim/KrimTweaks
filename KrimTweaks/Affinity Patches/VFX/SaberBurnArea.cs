@@ -1,8 +1,10 @@
 ﻿using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 
 namespace KrimTweaks.Affinity_Patches.VFX;
 
+[Bind]
 internal class SaberBurnArea : IAffinity
 {
     private readonly PluginConfig _config;

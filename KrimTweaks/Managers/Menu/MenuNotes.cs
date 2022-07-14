@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using KrimTweaks.Configuration;
+using SiraUtil.Attributes;
+using SiraUtil.Zenject;
 using UnityEngine;
 using Zenject;
 
 namespace KrimTweaks.Managers.Menu;
 
 // ReSharper disable FieldCanBeMadeReadOnly.Local
+[Bind(Location.Menu)]
 internal class MenuNotes : IInitializable, IDisposable
 {
     private static List<GameObject> _disabledNotes = new();

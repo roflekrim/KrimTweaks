@@ -9,7 +9,7 @@ using IPALogger = IPA.Logging.Logger;
 
 namespace KrimTweaks;
 
-[Plugin(RuntimeOptions.DynamicInit), NoEnableDisable]
+[Plugin(RuntimeOptions.SingleStartInit), NoEnableDisable]
 public class Plugin
 {
     internal const string SCORESABER_STATUS_TEXT =
@@ -28,6 +28,7 @@ public class Plugin
 
         zenjector.UseLogger(logger);
         zenjector.UseMetadataBinder<Plugin>();
+        zenjector.UseAutoBinder();
         
         zenjector.Install<AppInstaller>(Location.App, conf);
         zenjector.Install<MenuInstaller>(Location.Menu);

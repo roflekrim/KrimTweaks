@@ -2,9 +2,11 @@
 using HMUI;
 using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 
 namespace KrimTweaks.Affinity_Patches.Menu;
 
+[Bind]
 internal class DisableScrolling : IAffinity
 {
     private readonly PluginConfig _config;

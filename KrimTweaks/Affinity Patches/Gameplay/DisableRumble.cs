@@ -1,9 +1,11 @@
 ﻿using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using SiraUtil.Logging;
 
 namespace KrimTweaks.Affinity_Patches.Gameplay;
 
+[Bind]
 internal class DisableRumble : IAffinity
 {
     private readonly SiraLog _siraLog;

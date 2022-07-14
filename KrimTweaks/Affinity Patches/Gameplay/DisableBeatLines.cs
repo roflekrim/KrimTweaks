@@ -1,8 +1,10 @@
 ﻿using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 
 namespace KrimTweaks.Affinity_Patches.Gameplay;
 
+[Bind]
 internal class DisableBeatLines : IAffinity
 {
 

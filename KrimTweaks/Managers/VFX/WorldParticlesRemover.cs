@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Linq;
 using KrimTweaks.Configuration;
+using SiraUtil.Attributes;
+using SiraUtil.Zenject;
 using UnityEngine;
 using Zenject;
 
 namespace KrimTweaks.Managers.VFX;
 
+[Bind(Location.Menu | Location.GameCore)]
 internal class WorldParticlesRemover : IInitializable, IDisposable
 {
     private PluginConfig _config;
-
-    [Inject]
+    
     public WorldParticlesRemover(PluginConfig config)
     {
         _config = config;

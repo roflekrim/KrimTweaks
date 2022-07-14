@@ -1,4 +1,5 @@
-﻿using SiraUtil.Affinity;
+﻿using KrimTweaks.Configuration;
+using SiraUtil.Affinity;
 using SiraUtil.Logging;
 
 namespace KrimTweaks.Affinity_Patches.Menu;
@@ -6,10 +7,12 @@ namespace KrimTweaks.Affinity_Patches.Menu;
 internal class HealthWarning : IAffinity
 {
     private readonly SiraLog _siraLog;
+    private readonly PluginConfig _config;
     
-    public HealthWarning(SiraLog siraLog)
+    public HealthWarning(SiraLog siraLog, PluginConfig config)
     {
         _siraLog = siraLog;
+        _config = config;
     }
 
     [AffinityPrefix]
@@ -17,11 +20,8 @@ internal class HealthWarning : IAffinity
     // ReSharper disable once RedundantAssignment
     internal void Prefix(ref bool goStraightToMenu)
     {
-        goStraightToMenu = true;
-
-#if DEBUG
-        _siraLog.Debug("Skipped health warning");
-#endif
+        if (_config.Menu.SkipHealthWarning)
+            goStraightToMenu = true;
     }
     
 }

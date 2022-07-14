@@ -22,13 +22,7 @@ internal class MenuInstaller : Installer
 
         Container.Bind<LevelSelectionWarningViewController>().FromNewComponentAsViewController().AsSingle();
 
-        Container.BindInterfacesAndSelfTo<MenuNotes>().AsSingle();
-        Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().AsSingle();
-        Container.BindInterfacesAndSelfTo<AnniversaryRemover>().AsSingle();
-
         Container.Bind<ClockViewController>().FromNewComponentAsViewController().AsSingle();
         Container.BindInterfacesTo<Clock>().AsSingle();
-        
-        Container.BindInterfacesTo<UnauthorizedWarning>().AsSingle();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using KrimTweaks.Configuration;
 using UnityEngine;
 using Zenject;
@@ -34,4 +35,4 @@ internal class AnniversaryRemover : IInitializable, IDisposable
         if (GameObject.Find(AnniversaryWrapper) is not { } gameObject) return;
         gameObject.SetActive(!_config.Menu.DisableAnniversary);
     }
-}
+}*/

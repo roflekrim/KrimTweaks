@@ -27,6 +27,7 @@ using System.Linq;
 using HMUI;
 using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using SiraUtil.Logging;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,7 @@ using UnityEngine.UI;
 namespace KrimTweaks.Affinity_Patches.Menu;
 
 // ReSharper disable InconsistentNaming
+[Bind]
 internal class StaticLightsToggle : IAffinity
 {
     private readonly SiraLog _siraLog;

@@ -21,7 +21,5 @@ internal class GameInstaller : Installer
             Container.Bind<ClockViewController>().FromNewComponentAsViewController().AsSingle();
             Container.BindInterfacesTo<Clock>().AsSingle();
         }
-
-        Container.BindInterfacesAndSelfTo<WorldParticlesRemover>().AsSingle();
     }
 }
