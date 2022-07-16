@@ -1,9 +1,11 @@
 ﻿using KrimTweaks.Configuration;
 using SiraUtil.Affinity;
+using SiraUtil.Attributes;
 using SiraUtil.Logging;
 
 namespace KrimTweaks.Affinity_Patches.Menu;
 
+[Bind]
 internal class HealthWarning : IAffinity
 {
     private readonly SiraLog _siraLog;
@@ -23,5 +25,4 @@ internal class HealthWarning : IAffinity
         if (_config.Menu.SkipHealthWarning)
             goStraightToMenu = true;
     }
-    
 }
